@@ -1,3 +1,0 @@
-"inboundDlq":
-  "file":
-    "path": "./inbound/dlq"
