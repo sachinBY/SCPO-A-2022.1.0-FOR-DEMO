@@ -13,7 +13,7 @@ ing:
         # Path for store type which is selected above.
         # If Local File Store type is selected. Please configure the HTTP/HTTPs or FILE protocole for callback
         # If 'Azure Blob Store' type is selected. Please configure the HTTP/HTTPs or AzureBlob protocole for callback
-        path: "//in2npdvomqa01/Tools/SCPO-A/bulkFileStore"
+        path: "//in2npdvomqa01/Tools/SCPO-A-BulkFileStore"
         # Azure connection if 'Azure Blob Store' type is selected.
         azure:
           container.name: "mytestcontainer"
