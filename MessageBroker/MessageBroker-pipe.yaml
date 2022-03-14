@@ -1,0 +1,19 @@
+"mb":
+  "pipe":
+    "vm":
+      "state": "stopped"
+    "jms":
+      "state": "started"
+      "sessionCacheSize": "100"
+      "checkConnectivity": "false"
+      "queueName": "MB_PIPE"
+      "redeliveryDelay": "20000"
+      "initialRedeliveryDelay": "20000"
+      "maxConnections": "5"
+      "maximumRedeliveries": "-1"
+      "concurrentConsumers": "5"
+      "primaryNode": "false"
+      "brokerURL": "failover://tcp://IN2NPDVOMQA01.dev.corp.local:61616"
+    "queue":
+      "type": "JMS"
+      "state": "started"

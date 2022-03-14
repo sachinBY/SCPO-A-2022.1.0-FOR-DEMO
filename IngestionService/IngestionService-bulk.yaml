@@ -1,0 +1,48 @@
+#Bulk message sender and receiver configuration. Uncomment the required type of persistent store
+#***********************************************************************************
+#FIXME: We should address this variable and get rid of space
+
+ing:
+  bulk:
+    persistent:
+      store:
+        #Controls the type of Storage Location
+        type: "Local File Store"
+        #type: "Azure Blob Store"
+        
+        # Path for store type which is selected above.
+        # If Local File Store type is selected. Please configure the HTTP/HTTPs or FILE protocole for callback
+        # If 'Azure Blob Store' type is selected. Please configure the HTTP/HTTPs or AzureBlob protocole for callback
+        path: "//in2npdvomqa01/Tools/SCPO-A/bulkFileStore"
+        # Azure connection if 'Azure Blob Store' type is selected.
+        azure:
+          container.name: "mytestcontainer"
+
+# This is an internal API(callback API) which we have exposed need to set those configurations
+# The protocol host and port must be same as Ingestion service listener has
+    callback:
+      #Controls whether api endpoint accepts HTTP or HTTPS, FILE and AzureBlob
+      protocol: "FILE"
+      #protocol: "AzureBlob"
+      #protocol: "HTTP"
+      #protocol: "HTTPS"
+      host: "IN2NPDVOMQA01.dev.corp.local"
+      port: "9870"
+      path: "ing/api/v1/callback"
+#/ngestions and /messages inbound calls default properties
+    inbound:
+        sender: "ING-A"
+        receivers: "SAP-A"
+        bulkFormat: "CSV"
+        # Comma seperated cannonical models(In UpperCase).Please list all of then here
+        models: "GS1,BYDM"
+    type.version: "BYDM 2020.1.0"
+    notification.model: "BYDM"
+    #canmodel.version: "BYDM 2021.3.0"
+    #custom.transformation: ""
+    canmodel.version: "Custom"
+    custom.transformation: "/configuration/custom/customBulkNotificationId2021-9.dwl"
+    cps.Config: "ConfigurationService_Config"
+
+#Ingestion Service details
+  serviceInstance: "ING-CLUSTER"

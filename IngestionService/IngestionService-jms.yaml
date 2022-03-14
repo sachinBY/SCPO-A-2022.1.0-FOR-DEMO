@@ -1,0 +1,46 @@
+# Ingestion JMSOutboud brkoer configuration
+ing:
+  jmsOutbound:
+    queue:
+      brokerURL: "failover:(tcp://IN2NPDVOMQA01.dev.corp.local:61616)"
+      user: "admin"
+      maxConnections: "5"
+      concurrentConsumers: "3"
+      initialRedeliveryDelay: "20000"
+      redeliveryDelay: "20000"
+      sessionCacheSize: "100"
+      maximumRedeliveries: "5"
+      #Setting this flag as true will try to connect to the JMS queue at deployment time. 
+      #Mark as false unless queue Broker is configured and up.
+      checkConnectivity: false 
+      #In case the above checkConnectivity is true the reconnection frequency to the configured broker. 
+      #This value is not considered if the checkConnectivity flag is set as false.
+      reconnectFrequency : 2000
+      #In case the above checkConnectivity is true the reconnection Attempts to the configured broker. 
+      #This value is not considered if the checkConnectivity flag is set as false.
+      reconnectionAttempts : 1
+      
+#Endpoint(HTTP/HTTPS Request or JMS Outbound) for publishing notification for /ingestions endpoint and publishing canonical message for /messages endpoint
+canonical:
+  # Canonical JMS outbound endpoint
+  outbound:
+    # Allowed Outbound protocols are JMS and HTTP. Select any one
+    transportMethod: "JMS"
+  jmsOutbound:
+    # Allowed vaules are started, and stopped. update to "started", if in use
+    flowState: "started"
+    queue:
+      name: "MB_INBOUND"
+
+#Endpoint(HTTP/HTTPS Request or JMS Outbound) for publishing native message for /messages endpoint
+
+native:
+  # Native JMS outbound endpoint
+  outbound:
+    # Allowed Outbound protocols are JMS and HTTP. Select any one
+    transportMethod: "JMS"  
+  jmsOutbound:
+    # Allowed vaules are started, and stopped. update to "started", if in use
+    flowState: "started"
+    queue:
+      name: "HOST_ADAPTER_INBOUND"

@@ -1,0 +1,24 @@
+#**************************Ingestion service API HTTP Properties ***************************************#
+api:
+  id: "0000"
+  
+server:
+  listener: 
+  #Controls whether api endpoint accepts HTTP or HTTPS
+    config: "HTTPS_Listener_config"
+    #config: "HTTP_Listener_config"
+    http:
+      host: "IN2NPDVOMQA01.dev.corp.local"
+      port: "9871"
+      
+    https:
+      host: "IN2NPDVOMQA01.dev.corp.local"
+      port: "9870"
+      tls:
+        #context: "HTTPS_Listener_TLS_Context_with_Trust"
+        context: "HTTPS_Listener_TLS_Context"
+        keyStore:
+          path: "https/keystore.jks"
+        trustStore:
+          path: "https/truststore.jks"
+

@@ -1,0 +1,42 @@
+#******************Canmodel Service Properties*******************
+ing:
+  cs:
+    server:
+      requester:
+        #config: "HTTPS_CS_Request_Configuration"
+        config: "HTTP_CS_Request_Configuration"
+        base.path: "/canmodel/api/v1/canModels"
+        storeclientid: "xx"
+        storeclientsecret: "xx"
+        max.connections: "2"
+        connection.idle.timeout: "1200000"
+        responseTimeout: "30000"
+        response.buffer.size: "1024"
+        http:
+          host: "0.0.0.0"
+          port: "9861"
+        https:
+          host: "0.0.0.0"
+          port: "9860"
+          tls:
+            context: "HTTPS_CS_Request_TLS_Context_with_Trust"
+            #context: "HTTPS_CS_Request_TLS_Context"
+            keyStore:
+              path: "https/keystore.jks"
+            trustStore:
+              path: "https/truststore.jks"
+
+# canonical model version
+gs1.canmodel.version: "GS1_JDA 2020.2.0"
+bydm.canmodel.version: "BYDM 2020.2.0"
+gs1.validation.enabled: "False"
+bydm.validation.enabled: "False"
+unrecognizedAvpValidation: "ERROR"
+codeListValidation: "ERROR"
+recognizedAvpValidation: "ERROR"
+#gs1.validation.config: "GS1_Config_Canmodel_Service_FileCache"
+#gs1.validation.config: "GS1_Config_Canmodel_Service_ObjectStore"
+gs1.validation.config: "GS1_Config_Local"
+#bydm.validation.config: "BYDM_Config_Canmodel_Service_FileCache"
+#bydm.validation.config: "BYDM_Config_Canmodel_Service_ObjectStore"
+bydm.validation.config: "BYDM_Config_Local"

@@ -1,0 +1,71 @@
+{
+	"messageStructure": {
+		"dataElement": [
+			{
+				"name": "itemIdentifier",
+				"type": "string",
+				"isRequired": true
+			},
+			{
+				"name": "locationIdentifier",
+				"type": "string",
+				"isRequired": true
+			},
+			{
+				"name": "quantity",
+				"type": "decimal",
+				"isRequired": true
+			},
+			{
+				"name": "unitOfMeasure",
+				"type": "string",
+				"defaultValue": "EA"
+			},
+			{
+				"name": "bestBeforeDate",
+				"type": "date"
+			},
+			{
+				"name": "availableForSaleDate",
+				"type": "date"
+			},
+			{
+				"name": "project",
+				"type": "string"
+			},
+			{
+				"name": "availableForSupplyDate",
+				"type": "date"
+			},
+			{
+				"name": "totalRetailAmount",
+				"type": "decimal"
+			},
+			{
+				"name": "totalCost",
+				"type": "decimal"
+			},
+			{
+				"name": "currencyCode",
+				"type": "string",
+				"defaultValue": "USD"
+			},
+			{
+				"name": "storageLocation",
+				"type": "string"
+			}
+			
+		],
+		"delimiter": ",",
+		"loadParameter": [
+			{
+				"name": "onHandPostDate",
+				"value": "2018-08-12+04:00"
+			},
+			{
+				"name": "itemHierarchyLevel",
+				"value": "STYLE"
+			}
+		]
+	}
+}

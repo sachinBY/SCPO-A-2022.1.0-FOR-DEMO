@@ -1,0 +1,14 @@
+"eframework":
+  "errorReport":
+    "errorReportPath": "../logs/errorReports/connect-message-broker"
+    "error":
+      "status": "ERROR"
+    "success":
+      "status": "RECEIVED"
+    "htmlTemplatePath": "errorReportTemplate.html"
+    "enabled": "false"
+    "title": "connect Message Broker Error"
+    "payload":
+      "transaction":
+        "size": "2048"
+  "applicationId": "connect-message-broker"

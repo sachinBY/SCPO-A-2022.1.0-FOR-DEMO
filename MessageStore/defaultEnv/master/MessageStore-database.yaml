@@ -1,0 +1,12 @@
+"queryTimeout": "500"
+"MSDatabase":
+  "connection":
+    "maxWait": "10"
+    "maxPoolSize": "100"
+    "minPoolSize": "20"
+    "preparedStatementCacheSize": "10"
+    "acquireIncrement": "20"
+  "url": "jdbc:oracle:thin:@md1npdvcid02:1521:O19C01"
+  "driverClassName": "oracle.jdbc.driver.OracleDriver"
+"replay":
+  "inMemoryObjects": "10000"

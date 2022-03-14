@@ -1,0 +1,28 @@
+#******************Message Store Properties*******************
+ing:
+  ms:
+    server:
+      requester:
+        config: "HTTPS_MS_Request_Configuration"
+        #config: "HTTP_MS_Request_Configuration"
+        base.path: "/messagestore/api/v3"
+        storeclientid: "xx"
+        storeclientsecret: "xx"
+        max.connections: "2"
+        connection.idle.timeout: "1200000"
+        responseTimeout: "30000"
+        response.buffer.size: "1024"
+        http:
+          host: "IN2NPDVOMQA01.dev.corp.local"
+          port: "9831"
+        https:
+          host: "IN2NPDVOMQA01.dev.corp.local"
+          port: "9830"
+          tls:
+            context: "HTTPS_MS_Request_TLS_Context_with_Trust"
+            #context: "HTTPS_MS_Request_TLS_Context"
+            keyStore:
+              path: "https/keystore.jks"
+            trustStore:
+              path: "https/truststore.jks"
+

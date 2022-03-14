@@ -1,0 +1,25 @@
+"server":
+  "https":
+    "tls":
+      "trustStore":
+        "path": "https/truststore.jks"
+      "keyStore":
+        "path": "https/keystore.jks"
+      "context": "HTTPS_Listener_TLS_Context"
+    "host": "0.0.0.0"
+    "port": "9830"
+  "http":
+    "host": "0.0.0.0"
+    "port": "9831"
+  "request":
+    "replay":
+      "tls":
+        "keyStore":
+          "path": "https/keystore.jks"
+        "context": "Replay_HTTPS_Request_TLS_Context"
+        "trustStore":
+          "path": "https/truststore.jks"
+      "response":
+        "timeout": "10000"
+  "listener":
+    "config": "HTTPS_Listener_config"

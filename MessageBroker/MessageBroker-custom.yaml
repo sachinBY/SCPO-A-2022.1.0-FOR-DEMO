@@ -1,0 +1,142 @@
+"flow":
+  "outbound":
+    "ftp":
+      "checkConnectivity": "false"
+      "state": "stopped"
+    "jmsAMQ":
+      "checkConnectivity": "false"
+      "state": "started"
+    "file":
+      "state": "stopped"
+    "sftp":
+      "state": "stopped"
+      "checkConnectivity": "false"
+    "http":
+      "state": "stopped"
+  "inbound":
+    "sftp":
+      "checkConnectivity": "false"
+      "state": "stopped"
+    "ftp":
+      "checkConnectivity": "false"
+      "state": "stopped"
+    "file":
+      "state": "stopped"
+    "jmsAMQ":
+      "state": "started"
+      "checkConnectivity": "false"
+    "http":
+      "state": "started"
+"jmsInbound":
+  "queue":
+    "initialRedeliveryDelay": "20000"
+    "concurrentConsumers": "5"
+    "user": "admin"
+    "primaryNode": "false"
+    "sessionCacheSize": "100"
+    "name": "MB_INBOUND"
+    "maximumRedeliveries": "5"
+    "brokerURL": "failover://tcp://IN2NPDVOMQA01.dev.corp.local:61616"
+    "redeliveryDelay": "20000"
+    "maxConnections": "5"
+"httpOutboundRequest":
+  "https":
+    "tls":
+      "keyStore":
+        "path": "https/keystore.jks"
+        "key":
+          "password-secure": "{cipher}6059f2207e3a019d95c0ff9c9487bcc151f94aca2f7a8599ecda1645ea298034"
+        "password-secure": "{cipher}1086eb3898b534908009d2386d42829e191d3088738ea0206cdc0a0eb719de75"
+      "trustStore":
+        "path": "https/truststore.jks"
+        "password-secure": "{cipher}00a8dd1a6ab1cf77acf6d86b7f35c16c7175fa763b0932105d3dff7630ba808c"
+      "context": "HTTPS_OutboundRequest_TLS_Context"
+    "host": "127.0.0.1"
+    "port": "9910"
+  "http":
+    "port": "9911"
+    "host": "127.0.0.1"
+  "requester":
+    "config": "HTTPS_Request_configuration"
+"server":
+  "http":
+    "host": "0.0.0.0"
+    "port": "9911"
+  "https":
+    "host": "0.0.0.0"
+    "tls":
+      "keyStore":
+        "path": "https/keystore.jks"
+      "trustStore":
+        "path": "https/truststore.jks"
+      "context": "HTTPS_Listener_TLS_Context"
+    "port": "9910"
+  "listener":
+    "config": "HTTPS_Listener_config"
+"ftpInbound":
+  "user": "myuser"
+  "responseTimeout": "10000"
+  "path": "/path/to/files"
+  "host": "localhost"
+  "port": "21"
+  "passive": "true"
+"modelConverter":
+  "canModelService":
+    "requester":
+      "config": "HTTPS_CanModel_Request_configuration"
+      "https":
+        "tls":
+          "keyStore":
+            "password-secure": "{cipher}23d3e1de96be4e6f7667dccc63ce4961a329049ceeda80d1773ae4e0d144f379"
+            "path": "https/keystore.jks"
+            "key":
+              "password-secure": "{cipher}2823ebb61f7a182a270673b1a3a0d222f0c41eb446729e79bb428e2814362eb9"
+          "insecure": "true"
+          "context": "HTTPS_CanModel_Request_TLS_Context"
+          "trustStore":
+            "path": "https/truststore.jks"
+            "password-secure": "{cipher}5a35887d5fea7fa157b583a5e8ff3d2688f6dea9e07e62abf32b4667ac0d2bfb"
+        "port": "9860"
+        "host": "127.0.0.1"
+      "http":
+        "port": "9861"
+        "host": "127.0.0.1"
+      "path": "/canmodel/api/v1/canModels/"
+    "config": "Local"
+  "config": "configuration/converter-config.yaml"
+  "canModelList": "BYDM 2020.2.0"
+  "isRequired": "true"
+"ftpOutbound":
+  "user": "myuser"
+  "port": "21"
+  "password-secure": "{cipher}9fafab283499aa2178a3e478cbb14e3fba2028b7e019282ee525ffe51325b699"
+  "host": "localhost"
+"fileOutbound":
+  "path": "./path/to/files"
+  "fileAge": "500"
+  "pollingFrequency": "1000"
+"fileInbound":
+  "fileAge": "500"
+  "pollingFrequency": "1000"
+  "path": "./path/to/files"
+"sftpInbound":
+  "path": "/path/to/files"
+  "host": "localhost"
+  "password-secure": "{cipher}6a18c26ac2ad7219fb401b00610c81629fe8137e5c9e393f2b62e391fcdaebb8"
+  "port": "21"
+  "responseTimeout": "10000"
+  "user": "myuser"
+"sftpOutbound":
+  "user": "myuser"
+  "host": "localhost"
+  "port": "21"
+"jmsOutbound":
+  "queue":
+    "maxConnections": "5"
+    "redeliveryDelay": "20000"
+    "initialRedeliveryDelay": "20000"
+    "concurrentConsumers": "5"
+    "sessionCacheSize": "100"
+    "user": "admin"
+    "maximumRedeliveries": "5"
+    "brokerURL": "failover://tcp://IN2NPDVOMQA01.dev.corp.local:61616"

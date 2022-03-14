@@ -1,0 +1,73 @@
+# secure properties for canonical requester
+canonical:
+    publish:
+      requester:
+        https:
+          tls:
+            keyStore:
+              password-secure: "changeme"
+              key.password-secure: "changeme"
+            trustStore:
+              password-secure: "changeme" 
+
+# secure properties for native requester
+native:
+  publish:
+    requester:      
+      https:
+        tls:
+          keyStore:
+            password-secure: "changeme"
+            key.password-secure: "changeme"
+          trustStore:
+            password-secure: "changeme"
+      
+# secure properties for listener endpoint
+server:
+  listener: 
+    https:
+      tls:
+        keyStore:
+          password-secure: "changeme"
+          key:
+            password-secure: "changeme"
+        trustStore:
+          password-secure: "changeme"
+          
+# secure properties for message store endpoint         
+ing:
+  ms:
+    server:
+      requester:
+        https:
+          tls:
+            keyStore:
+              password-secure: "changeme"
+              key.password-secure: "changeme"
+            trustStore:
+              password-secure: "changeme"
+              
+# secure properties for canmodel service endpoint         
+  cs:
+    server:
+      requester:
+        https:
+          tls:
+            keyStore:
+              password-secure: "changeme"
+              key.password-secure: "changeme"
+            trustStore:
+              password-secure: "changeme" 
+                           
+# Azure connection string
+  bulk:
+    persistent:
+      store:
+        azure:
+          connection.string-secure: "DefaultEndpointsProtocol=https;AccountName=myowndatastorage;AccountKey=sPhu4kKhtYaMIzgHRs3eCcjPOEo/Rd/Zyfv2xCf7vYcYnp0qb1H/G96GVoCvDRyiGSCA4cmZeGBM+poSbmkgnA==;EndpointSuffix=core.windows.net"
+
+# secure properties for JMS Outbound   
+  jmsOutbound:
+    queue:
+      password-secure: "admin"
+  

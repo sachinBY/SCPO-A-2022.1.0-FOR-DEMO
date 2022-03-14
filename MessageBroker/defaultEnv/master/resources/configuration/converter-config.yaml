@@ -1,0 +1,44 @@
+# This file governs the message conversion.
+# A Receiver willing to convert a single(or multiple) message type need to expose the config as below
+#
+# Messages to be converted for receiver set
+# <ReceiverName>:<MessageType>:<ExpectedModel>
+#
+# <ReceiverName> - If similar conversions are required for multiple receivers, one can mention them as :  <Receiver1>|<Receiver2>|<Receiver3>
+# <MessageType> - if similar conversion is required for multiple messageTypes , one can mention them as :  <MessageType1>|<MessageType2>|<MessageType3>
+# <ExpectedModel> - should be either GS1 or BYDM
+#
+# !! Important !!
+# The <MessageType> that is used in this file must always end in 'Message', even if it is a sub type.
+# 
+# | Model | Message or SubMessage | Written as in this file |
+# |-------|-----------------------|-------------------------|
+# | GS1   | closeOrder            | closeOrderMessage       |
+# | GS1   | commodityMessage      | commodityMessage        |
+# | BYDM  | closeOrderMessage     | closeOrderMessage       |
+# | BYDM  | commodityMessage      | commodityMessage        |
+#
+# Examples
+#
+# "For the receivers WMA.EAST & WMA.WEST, the message types itemMessage, locationMessage & orderClose should be converted to BYDM"
+# - 'WMA.EAST|WMA.WEST:itemMessage|locationMessage|orderCloseMessage:BYDM'
+#
+# "For the receiver WMA.EAST every message type should be converted to GS1"
+# - 'WMA.EAST:*:GS1'
+#
+# 'The receiver WMA.EAST needs all messages as GS1, and the receiver TMA.GLOBAL needs all messages as BYDM''
+# - 'WMA.EAST:*:GS1'
+# - 'TMA.GLOBAL:*:BYDM''
+#
+# "For the receiver TMA.WEST the message types itemMessage & locationMessage should be converted to BYDM, every other message should be converted to GS1"
+# - 'TMA.WEST:itemMessage|locationMessage:BYDM'
+# - 'TMA.WEST:*:GS1'
+# 
+# This is invalid configuration. The first line specifies TMA.WEST expects every message converted to GS1, the second line is ignored. 
+# - 'TMA.WEST:*:GS1'
+# - 'TMA.WEST:itemMessage|locationMessage:BYDM'
+
+- 'WMA.EAST:*:GS1'
+- 'TMA.WEST:itemMessage|locationMessage:BYDM'
+- 'TMA.WEST:*:GS1'
+- 'LOC.DOC0001:*:GS1'

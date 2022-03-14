@@ -1,0 +1,11 @@
+#******************EFramework Properties*******************
+# Properties required to generate Error Report
+eframework:
+  applicationId: "ing_adapter"
+  errorReport:
+    enabled: "true"
+    htmlTemplatePath: "errorReportTemplate.html"
+    errorReportPath: "/errorReports"
+    title: "ING_Adapter"
+    payload.transaction.size: "2048"
+    location: "errorReport"

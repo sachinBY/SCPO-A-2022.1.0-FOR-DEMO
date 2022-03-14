@@ -1,0 +1,10 @@
+"eframework":
+  "errorReport":
+    "errorReportPath": "./errorReports"
+    "htmlTemplatePath": "errorReportTemplate.html"
+    "enabled": "true"
+    "title": "MessageStore Error Report"
+    "payload":
+      "transaction":
+        "size": "2048"
+  "applicationId": "MessageStore"
