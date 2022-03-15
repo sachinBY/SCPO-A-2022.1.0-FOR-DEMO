@@ -41,7 +41,7 @@ ing:
     #canmodel.version: "BYDM 2021.3.0"
     #custom.transformation: ""
     canmodel.version: "Custom"
-    custom.transformation: "/configuration/custom/customBulkNotificationId2021-9.dwl"
+    custom.transformation: "configuration/custom/customBulkNotificationId2021-9.dwl"
     cps.Config: "ConfigurationService_Config"
 
 #Ingestion Service details
