@@ -9,6 +9,9 @@ var dfueffpriceEntity = vars.entityMap.dfuprice[0].dfueffprice[0]
 	MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	MS_REF: vars.storeMsgReference.messageReference, 
 	(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(($$))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+	MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  	SENDER: vars.bulkNotificationHeaders.sender,
 	DMDGROUP: if (!isEmpty($.demandChannel)) $.demandChannel
 		else default_value,
 	DMDUNIT: if (!isEmpty($.itemId)) $.itemId

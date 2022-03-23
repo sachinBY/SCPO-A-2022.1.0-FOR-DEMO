@@ -5,7 +5,10 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 (payload map (resource, indexOfresource) -> { 
 		MS_BULK_REF: resource.MS_BULK_REF,
 		MS_REF: resource.MS_REF,	
-		INTEGRATION_STAMP: resource.INTEGRATION_STAMP, 	  	
+		INTEGRATION_STAMP: resource.INTEGRATION_STAMP,
+		MESSAGE_TYPE: resource.MESSAGE_TYPE,
+  		MESSAGE_ID: resource.MESSAGE_ID,
+  		SENDER: resource.SENDER, 	  	
 	    ADJFACTOR: if(resource.ADJFACTOR != default_value) resource.ADJFACTOR as Number else default_value,
 	    ADDONCOST: if(resource.ADDONCOST != default_value) resource.ADDONCOST as Number else default_value, 
 	    CHECKMAXCAP:  if(resource.CHECKMAXCAP != default_value) resource.CHECKMAXCAP as Number else default_value,

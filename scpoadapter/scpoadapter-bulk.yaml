@@ -14,8 +14,8 @@ bulk:
     store:
       host:
       #supported possible values are Azure Blob Store, Local File Store  
-      type: "Azure Blob Store"
-      path: 
+      type: "Local File Store"
+      path: "//in2npdvomqa01/Tools/SCPO" 
   callback:
     # supported possible values are AzureBlob, FILE
     protocol: "FILE"

@@ -17,7 +17,7 @@ var udcs = vars.outboundUDCs.skuprojstatic[0].skuprojstatic[0]
 	itemLocationProjection: (payload map{
 		creationDateTime: now(),
 		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+		documentActionCode: "CHANGE_BY_REFRESH",
 		(avpList: (filter(udcs, (element, index) -> $[upper(element.scpoColumnName)] != null) map (udc , value) -> {
 			name: udc.hostColumnName,
 			value: $[upper(udc.scpoColumnName)]

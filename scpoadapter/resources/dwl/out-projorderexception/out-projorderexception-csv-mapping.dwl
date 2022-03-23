@@ -4,7 +4,7 @@ var udcs = vars.outboundUDCs.projorderexception[0].projorderexception[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---
 (payload map {
-
+	"recommendedPurchaseOrderException.documentActionCode": "CHANGE_BY_REFRESH",
 	"recommendedPurchaseOrderException.recommendedPurchaseOrderExceptionIdentification.recommendedPurchaseOrderId": $.ORDERID,
 	"recommendedPurchaseOrderException.recommendedPurchaseOrderExceptionIdentification.type" : "RECOMMENDED_ORDER_PROJECTION",
 	"recommendedPurchaseOrderException.recommendedPurchaseOrderExceptionIdentification.shipFrom" : $.SOURCE,

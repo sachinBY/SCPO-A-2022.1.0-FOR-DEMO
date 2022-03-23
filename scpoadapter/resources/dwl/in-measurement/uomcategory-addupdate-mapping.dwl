@@ -6,6 +6,9 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 		MS_BULK_REF: measurement.MS_BULK_REF,
 		MS_REF: measurement.MS_REF,
         INTEGRATION_STAMP: measurement.INTEGRATION_STAMP,
+        MESSAGE_TYPE: measurement.MESSAGE_TYPE,
+  		MESSAGE_ID: measurement.MESSAGE_ID,
+  		SENDER: measurement.SENDER,
     	CATEGORY:  measurement.CATEGORY,
 		LABEL:  measurement.LABEL,	
 		STDUOM : if (measurement.STDUOM != null) 

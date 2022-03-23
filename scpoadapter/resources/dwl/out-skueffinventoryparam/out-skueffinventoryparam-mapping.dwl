@@ -18,7 +18,7 @@ var udcs = vars.outboundUDCs.skueffinventoryparam[0].skueffinventoryparam[0]
     value:(flatten(item pluck($))) map  {
 		creationDateTime: now() as DateTime,
 		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+		documentActionCode: "CHANGE_BY_REFRESH",
 		itemLocationEffectiveInventoryParametersId: {
 			item: {
 				primaryId: $.ITEM

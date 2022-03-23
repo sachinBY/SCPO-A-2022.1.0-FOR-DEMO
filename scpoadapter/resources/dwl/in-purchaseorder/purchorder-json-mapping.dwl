@@ -13,6 +13,9 @@ flatten(flatten(flatten(flatten((payload.purchaseOrder map (order,orderIndex)-> 
 						 MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	  					 MS_REF: vars.storeMsgReference.messageReference,	
 						(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((orderIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+						MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  						MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  						SENDER: vars.bulkNotificationHeaders.sender,
 						PROJECT: if ( orderLineItem.project != null ) orderLineItem.project else if ( order.project != null ) order.project else  default_value,
 						PURCHMETHOD: if ( orderLineItem.purchaseMethod != null ) orderLineItem.purchaseMethod else if ( order.purchaseMethod != null ) order.purchaseMethod else default_value,
 						ORDERNUM: if ( order.orderId != null ) order.orderId 
@@ -39,6 +42,9 @@ flatten(flatten(flatten(flatten((payload.purchaseOrder map (order,orderIndex)-> 
 						 MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	  					MS_REF: vars.storeMsgReference.messageReference,	
 						(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((orderIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+						MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  						MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  						SENDER: vars.bulkNotificationHeaders.sender,
 						PROJECT: if ( orderLineItem.project != null ) orderLineItem.project else if ( order.project != null ) order.project else  default_value,
 						PURCHMETHOD: if ( orderLineItem.purchaseMethod != null ) orderLineItem.purchaseMethod else if ( order.purchaseMethod != null ) order.purchaseMethod else default_value,
 						ORDERNUM: if ( order.orderId != null ) order.orderId 
@@ -68,6 +74,9 @@ flatten(flatten(flatten(flatten((payload.purchaseOrder map (order,orderIndex)-> 
 						 MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	  					MS_REF: vars.storeMsgReference.messageReference,	
 						(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((orderIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+						MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  						MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  						SENDER: vars.bulkNotificationHeaders.sender,
 						PROJECT: if ( orderLineItem.project != null ) orderLineItem.project else if ( order.project != null ) order.project else  default_value,
 						PURCHMETHOD: if ( orderLineItem.purchaseMethod != null ) orderLineItem.purchaseMethod else if ( order.purchaseMethod != null ) order.purchaseMethod else default_value,
 						ORDERNUM: if ( order.orderId != null ) order.orderId 
@@ -90,7 +99,9 @@ flatten(flatten(flatten(flatten((payload.purchaseOrder map (order,orderIndex)-> 
 						 MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	  						MS_REF: vars.storeMsgReference.messageReference,	
 	  						(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((orderIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
-						
+						MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  						MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  						SENDER: vars.bulkNotificationHeaders.sender,
 						PROJECT: if ( orderLineItem.project != null ) orderLineItem.project else if ( order.project != null ) order.project else  default_value,
 						PURCHMETHOD: if ( orderLineItem.purchaseMethod != null ) orderLineItem.purchaseMethod else if ( order.purchaseMethod != null ) order.purchaseMethod else default_value,
 						ORDERNUM: if ( order.orderId != null ) order.orderId 

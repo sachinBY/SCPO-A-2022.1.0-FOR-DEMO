@@ -7,7 +7,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 (payload map {
 	"plannedSupply.creationDateTime": now() >> "UTC",
 	"plannedSupply.documentStatusCode": "ORIGINAL",
-	"plannedSupplydocumentActionCode": "ADD",
+	"plannedSupply.documentActionCode": "CHANGE_BY_REFRESH",
 	
 	"plannedSupply.plannedSupplyId.item.primaryId": $.ITEM,
 	"plannedSupply.plannedSupplyId.item.additionalTradeItemId.typeCode": "GTIN-14",

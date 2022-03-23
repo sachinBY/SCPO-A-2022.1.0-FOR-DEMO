@@ -17,7 +17,7 @@ var udcs = vars.outboundUDCs.orderlink[0].orderlink[0]
 	supplyDemandLink: (payload map() -> {
 		creationDateTime: now(),
 		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+		documentActionCode: "CHANGE_BY_REFRESH",
 		lastUpdateDateTime: now(),
 		(avpList: (filter(udcs, (element, index) -> $[upper(element.scpoColumnName)] != null) map (udc , value) -> {
 			name: udc.hostColumnName,

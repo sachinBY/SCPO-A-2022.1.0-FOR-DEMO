@@ -13,6 +13,9 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 	MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	MS_REF: vars.storeMsgReference.messageReference, 
 	(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+	MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  	SENDER: vars.bulkNotificationHeaders.sender,
 	(DMDUNIT: $."demandForecastUnitId.demandUnit") 
 	    		if not $."demandForecastUnitId.demandUnit" == null,
 	(DMDGROUP: $."demandForecastUnitId.demandChannel") 

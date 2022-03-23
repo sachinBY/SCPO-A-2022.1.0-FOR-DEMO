@@ -14,7 +14,9 @@ payload map (forecast2,forecast2index) -> {
 		MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 		MS_REF: vars.storeMsgReference.messageReference,
 		INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(forecast2index)S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"},	
-		
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  		MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  		SENDER: vars.bulkNotificationHeaders.sender,
 		DMDUNIT: forecast2.itemId,
 		DMDGROUP: if(forecast2.demandChannel != null and forecast2.demandChannel != "") forecast2.demandChannel else "*UNKNOWN",
 		LOC: forecast2.locationId,

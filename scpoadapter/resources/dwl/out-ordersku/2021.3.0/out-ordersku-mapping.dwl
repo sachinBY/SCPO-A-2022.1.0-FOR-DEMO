@@ -18,7 +18,7 @@ var udcs = vars.outboundUDCs.ordersku[0].ordersku[0]
 		
 			creationDateTime: now(),
 			documentStatusCode: "ORIGINAL",
-			documentActionCode: "ADD",
+			documentActionCode: "CHANGE_BY_REFRESH",
 			recommendedPurchaseOrderId: $.ORDERID as String default "",
 			"type":"RECOMMENDED_ORDER_PROJECTION",
 	

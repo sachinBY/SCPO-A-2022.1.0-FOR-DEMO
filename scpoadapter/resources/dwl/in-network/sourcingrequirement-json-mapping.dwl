@@ -19,6 +19,9 @@ flatten(flatten(flatten(flatten(payload.network map (network, networkIndex) -> {
 		MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 		MS_REF: vars.storeMsgReference.messageReference,
 		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((resourceRequirementIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  		MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  		SENDER: vars.bulkNotificationHeaders.sender,
 		EFF: if(sourcingInformation.sourcingDetails.effectiveFromDate != null)
 				(sourcingInformation.sourcingDetails.effectiveFromDate replace 'Z' with('')) as Date {format: "yyyy-MM-dd", class : "java.sql.Date"}
 				else default_value,

@@ -5,7 +5,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 ---
 payload map
 {
-	
+	"documentActionCode": "CHANGE_BY_REFRESH",
 	recommendedPurchaseOrderId: $.ORDERID as String default "",
 	"type": "RECOMMENDED_ORDER_PROJECTION",
 	"lineItem.itemId": $.ITEM,

@@ -10,13 +10,16 @@ flatten(payload.calendar filter ($.calendarType != null and calendartypeCode[$.c
 	calendarPatterns: ( calendar.pattern map(calendarPattern, calendarPatternIndex)-> {
 	    MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 		MS_REF: vars.storeMsgReference.messageReference,
+		INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ calendarPatternIndex ++ 'S') as Period) replace 'T' with '') [0 to 17],
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 	SENDER: vars.bulkNotificationHeaders.sender,
 		CAL : if(calendar.calendarId !=null) 
 				calendar.calendarId
 			  else  
 			    default_value,
 		//Check how to generate the sequence number PATTERNSEQNUM
 		PATTERNSEQNUM: calendarPatternIndex+1,
-		INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ calendarPatternIndex ++ 'S') as Period) replace 'T' with '') [0 to 17],
 		STARTDATE: if (calendarPattern.startDate != null) 
 					calendarPattern.startDate as Date {format: "yyyy-MM-dd", class : "java.sql.Date"}
 			   else 

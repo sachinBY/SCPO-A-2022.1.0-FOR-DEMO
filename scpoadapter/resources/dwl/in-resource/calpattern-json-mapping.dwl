@@ -17,7 +17,10 @@ var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-
 				and patternEntity != null
 			)])),
 			MS_BULK_REF: vars.storeHeaderReference.bulkReference,
-			MS_REF: vars.storeMsgReference.messageReference,	
+			MS_REF: vars.storeMsgReference.messageReference,
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  			MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  			SENDER: vars.bulkNotificationHeaders.sender,	
 			(CAL: res.resourceCalendar.calendarId) if(res.resourceCalendar.calendarId != null),
 			ACTIONCODE: res.documentActionCode,
 			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((patternIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),

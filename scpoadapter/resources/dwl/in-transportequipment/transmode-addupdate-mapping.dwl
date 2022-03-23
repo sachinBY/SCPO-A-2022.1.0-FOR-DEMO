@@ -6,6 +6,9 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 		MS_BULK_REF: tranmodeeqp.MS_BULK_REF,
 		MS_REF: tranmodeeqp.MS_REF,
 		INTEGRATION_STAMP: tranmodeeqp.INTEGRATION_STAMP,
+		MESSAGE_TYPE: tranmodeeqp.MESSAGE_TYPE,
+  		MESSAGE_ID: tranmodeeqp.MESSAGE_ID,
+  		SENDER: tranmodeeqp.SENDER,
 		DESCR: if (tranmodeeqp.DESCR != null) tranmodeeqp.DESCR else default_value,
 		TRANSMODE: if (tranmodeeqp.TRANSMODE != null) tranmodeeqp.TRANSMODE else default_value,
 		(tranmodeeqp.udcs map {

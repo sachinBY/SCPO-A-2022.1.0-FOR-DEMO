@@ -9,6 +9,9 @@ var entityMap = if (itemUomCatConvFactorEntity != null) unzip((itemUomCatConvFac
  			MS_BULK_REF: $.MS_BULK_REF,
 			MS_REF: $.MS_REF, 
  			INTEGRATION_STAMP: $.INTEGRATION_STAMP,
+ 			MESSAGE_TYPE: $.MESSAGE_TYPE,
+ 			MESSAGE_ID: $.MESSAGE_ID,
+ 			SENDER: $.SENDER,
 			ITEM: $.ITEM,
 			RATIO: $.RATIO,
 			SOURCECATEGORY: $.SOURCECATEGORY,
@@ -20,5 +23,12 @@ var entityMap = if (itemUomCatConvFactorEntity != null) unzip((itemUomCatConvFac
 			//}),
 			//(entityMap[$$] map(v,k)-> {
 				//((itemUomCatConvFactorCol[(k)]) : default_value) if (v ~= false)
-			//})		
+			//})	
+			($.avplistUDCS default [] map {
+	      		(($.UDCName): if ($.UDCValue == null or $.UDCValue == default_value) default_value
+								else if ($.dataType != null and $.dataType == "DATETIME") $.UDCValue as DateTime as String
+								else if ($.dataType != null and $.dataType == "DATE") $.UDCValue as Date {format: "yyyy-MM-dd", class : "java.sql.Date"}
+								else if ($.dataType != null and ($.dataType == "NUMBER" or $.dataType == "FLOAT" or $.dataType == "INTEGER")) $.UDCValue as Number
+								else $.UDCValue) if ($ != null and $.UDCName != null)
+	    	})	
 }

@@ -17,7 +17,7 @@ var udcs = vars.outboundUDCs.projorderexception[0].projorderexception[0]
 	recommendedPurchaseOrderException: (payload map {
 		creationDateTime: now(),
 		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+		documentActionCode: "CHANGE_BY_REFRESH",
 		(avpList: (filter(udcs, (element, index) -> $[upper(element.scpoColumnName)] != null) map (udc , value) -> {
 			name: udc.hostColumnName,
 			value: $[upper(udc.scpoColumnName)]

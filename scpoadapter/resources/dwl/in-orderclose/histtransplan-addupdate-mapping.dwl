@@ -8,7 +8,10 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 (payload map (histTrans, indexOfHistTrans) -> {
 		MS_BULK_REF: histTrans.MS_BULK_REF,
 		MS_REF: histTrans.MS_REF,	
-		INTEGRATION_STAMP: histTrans.INTEGRATION_STAMP,		
+		INTEGRATION_STAMP: histTrans.INTEGRATION_STAMP,
+		MESSAGE_TYPE: histTrans.MESSAGE_TYPE,
+  		MESSAGE_ID: histTrans.MESSAGE_ID,
+  		SENDER: histTrans.SENDER,		
 		DEST: histTrans.DEST,
 
 		ITEM: histTrans.ITEM,

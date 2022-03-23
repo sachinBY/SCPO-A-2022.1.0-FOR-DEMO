@@ -8,6 +8,9 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 	MS_REF: vars.storeMsgReference.messageReference,
 	(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(($$))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"} 
     ),
+    MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  	SENDER: vars.bulkNotificationHeaders.sender,
 	CUST:$.partyId,
     CUSTCLASS:$.customerDetails.customerClass,
     DESCR:$.basicParty.partyName,

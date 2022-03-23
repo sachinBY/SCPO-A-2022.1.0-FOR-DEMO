@@ -5,8 +5,11 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 (payload map(calendarPattern, calendarPatternPatternIndex) -> {
 	    MS_BULK_REF: calendarPattern.MS_BULK_REF,
 	    MS_REF: calendarPattern.MS_REF,
-		CAL : calendarPattern.CAL,
 		INTEGRATION_STAMP: calendarPattern.INTEGRATION_STAMP,
+		MESSAGE_TYPE: calendarPattern.MESSAGE_TYPE,
+		MESSAGE_ID: calendarPattern.MESSAGE_ID,
+		SENDER: calendarPattern.SENDER,
+		CAL : calendarPattern.CAL,
 		PATTERNSEQNUM: calendarPattern.PATTERNSEQNUM,
 		// Check how to generate the sequence number PATTERNSEQNUM
 		STARTDATE: calendarPattern.STARTDATE,

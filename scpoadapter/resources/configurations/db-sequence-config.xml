@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <sequence-configuration>
-<table name="CUSTORDER">
+<!-- <table name="CUSTORDER">
 	<column name="ORDERSEQNUM" sequence="CUSTORDERSEQ" />
-</table>
+</table> -->
 <table name="PURCHORDER">
 	<column name="ORDERSEQNUM" sequence="PURCHORDERSEQ" />
 </table>

@@ -4,7 +4,12 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-util.dwl")
 ---
  (payload map (supporder, indexOfSuppOrder) -> {
+ 		MS_BULK_REF: supporder.MS_BULK_REF,
+		MS_REF: supporder.MS_REF,
  		INTEGRATION_STAMP: supporder.INTEGRATION_STAMP,
+ 		MESSAGE_TYPE: supporder.MESSAGE_TYPE,
+    	MESSAGE_ID: supporder.MESSAGE_ID,
+  		SENDER: supporder.SENDER,
 	  	ITEM: if(supporder.ITEM != null) supporder.ITEM else default_value,
 		LOC: if(supporder.LOC != null) supporder.LOC else default_value,
 		SUPPORDERID: if(supporder.SUPPORDERID != null) supporder.SUPPORDERID else default_value,

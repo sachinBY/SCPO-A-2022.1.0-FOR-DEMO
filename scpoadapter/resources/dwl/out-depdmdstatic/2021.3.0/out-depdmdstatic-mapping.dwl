@@ -18,7 +18,7 @@ import * from dw::core::Strings
 		dependentDemand:(payload map {
 				creationDateTime: now(),
 				documentStatusCode: "ORIGINAL",
-				documentActionCode: "ADD",
+				documentActionCode: "CHANGE_BY_REFRESH",
 		(avpList: (filter(udcs, (element, index) -> $[upper(element.scpoColumnName)] != null) map (udc , value) -> {
 			name: udc.hostColumnName,
 			value: $[upper(udc.scpoColumnName)]

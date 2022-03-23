@@ -4,6 +4,7 @@ var udcs = vars.outboundUDCs.skustatstatic[0].skustatstatic[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---
 payload map {
+	"itemLocationStatistics.documentActionCode": "CHANGE_BY_REFRESH",
 	"itemLocationStatistics.itemLocationStatisticsId.itemId": $.ITEM,
 	"itemLocationStatistics.itemLocationStatisticsId.locationId": $.LOC,
 	"itemLocationStatistics.optionSet": $.OPTIONSET,

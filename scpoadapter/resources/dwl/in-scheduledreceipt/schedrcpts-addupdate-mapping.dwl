@@ -8,6 +8,9 @@ var scheduledReceiptEntity = vars.entityMap.schedrcpts[0].schedrcpts[0]
 		MS_REF: schedReceipt.MS_REF,	
 		
  		INTEGRATION_STAMP: schedReceipt.INTEGRATION_STAMP,
+ 		MESSAGE_TYPE: schedReceipt.MESSAGE_TYPE,
+  		MESSAGE_ID: schedReceipt.MESSAGE_ID,
+  		SENDER: schedReceipt.SENDER,
 		ACTIONALLOWEDSW:schedReceipt.ACTIONALLOWEDSW,
 	  	EXPDATE: schedReceipt.EXPDATE,
 		EXPLODESW: if(schedReceipt.EXPLODESW == "true") 1 else if (schedReceipt.EXPLODESW == "false") 0 else schedReceipt.EXPLODESW,

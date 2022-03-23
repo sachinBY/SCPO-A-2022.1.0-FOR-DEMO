@@ -10,11 +10,14 @@ flatten(flatten(payload.calendar  filter ($.calendarType != null and calendartyp
 		calendarAttributes: (calendarPattern.calendarAttribute map(calendarAttribute, calendarAttributeIndex) -> {
 		    MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 			MS_REF: vars.storeMsgReference.messageReference,
+			INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ calendarAttributeIndex ++ 'S') as Period) replace 'T' with '') [0 to 17],
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+			MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+			SENDER: vars.bulkNotificationHeaders.sender,
 			CAL : if(calendar.calendarId !=null) 
 				calendar.calendarId
 			  else  
 			    default_value,
-			INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ calendarAttributeIndex ++ 'S') as Period) replace 'T' with '') [0 to 17],
 			PATTERNSEQNUM: calendarPatternIndex + 1,
 			ATTRIBUTE: if (calendarAttribute.attributeType != null) 
 					calendarAttribute.attributeType

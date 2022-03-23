@@ -17,7 +17,7 @@ var udcs = vars.outboundUDCs.item[0].item[0]
 	item: (payload map (ele, index ) -> {	
 		creationDateTime: now(),
 		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+		documentActionCode: "CHANGE_BY_REFRESH",
 		lastUpdateDateTime: now(),
 		itemId: {
 			primaryId: (ele pluck($$))[0]

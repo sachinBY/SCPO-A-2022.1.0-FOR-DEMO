@@ -10,6 +10,9 @@ flatten(payload.inventoryTransaction2 map (inventory,inventoryIndex) -> {
     	MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 		MS_REF: vars.storeMsgReference.messageReference,
 		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((inventoryIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  		MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  		SENDER: vars.bulkNotificationHeaders.sender,
 		TYPE: "1",
 		EVENT: " ",
 		DMDUNIT: if(inventory.itemId != null and inventory.itemId != "") 

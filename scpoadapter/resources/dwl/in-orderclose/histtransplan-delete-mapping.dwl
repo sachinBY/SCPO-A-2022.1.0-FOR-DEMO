@@ -6,6 +6,9 @@ var default_value = "###JDA_DEFAULT_VALUE###"
  		MS_BULK_REF: histTrans.MS_BULK_REF,
 		MS_REF: histTrans.MS_REF,
 		INTEGRATION_STAMP: histTrans.INTEGRATION_STAMP,
+		MESSAGE_TYPE: histTrans.MESSAGE_TYPE,
+  		MESSAGE_ID: histTrans.MESSAGE_ID,
+  		SENDER: histTrans.SENDER,
 		DEST: if(histTrans.DEST != null or histTrans.DEST != "") histTrans.DEST else default_value,
 
 		ITEM: if(histTrans.ITEM != null or histTrans.ITEM != "") histTrans.ITEM else default_value,

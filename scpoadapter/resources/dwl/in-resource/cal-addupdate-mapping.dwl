@@ -5,7 +5,10 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 (payload map (data, indexOfCal) -> {
 		MS_BULK_REF: data.MS_BULK_REF,
 		MS_REF: data.MS_REF,	
-	 	INTEGRATION_STAMP: data.INTEGRATION_STAMP,  	
+	 	INTEGRATION_STAMP: data.INTEGRATION_STAMP,
+	 	MESSAGE_TYPE: data.MESSAGE_TYPE,
+  		MESSAGE_ID: data.MESSAGE_ID,
+  		SENDER: data.SENDER,  	
 	    DESCR: data.DESCR_CAL,
 		CAL: data.CAL,
 		TYPE: if(data.TYPE != default_value) data.TYPE as Number else default_value,   

@@ -16,7 +16,7 @@ var udcs = vars.outboundUDCs.projorderskudetail[0].projorderskudetail[0]
 	recommendedPurchaseOrder: (payload map {
 		creationDateTime: now(),
 		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+		documentActionCode: "CHANGE_BY_REFRESH",
 		recommendedPurchaseOrderId: $.ORDERID as String default "",
 		"type": "RECOMMENDED_ORDER_PROJECTION",
 		(avpList: (filter(udcs, (element, index) -> $[upper(element.scpoColumnName)] != null) map (udc , value) -> {

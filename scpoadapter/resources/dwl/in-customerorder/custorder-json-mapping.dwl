@@ -10,7 +10,10 @@ flatten (payload.customerOrder map (order, orderIndex) -> {
 		(array: flatten((orderLineItem.lineItemDetail map (lineItemDetail, indexDetail) -> {
 		MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	    MS_REF: vars.storeMsgReference.messageReference,
-		INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ orderIndex ++ 'S') as Period) replace 'T' with '') [0 to 17], 
+		INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ orderIndex ++ 'S') as Period) replace 'T' with '') [0 to 17],
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 	SENDER: vars.bulkNotificationHeaders.sender, 
 		DMDGROUP: if (orderLineItem.demandChannel != null) orderLineItem.demandChannel else default_value,
 		FCSTSW: if (orderLineItem.isForecastOrder != null) if(orderLineItem.isForecastOrder) 1 else 0 else default_value,
 		FCSTTYPE: if (orderLineItem.forecastType != null) orderLineItem.forecastType else default_value,

@@ -9,7 +9,10 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 	resources:($.resource map (res, index) -> {
 	MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	MS_REF: vars.storeMsgReference.messageReference,		
-	(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(($$))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),	
+	(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(($$))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+	MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  	SENDER: vars.bulkNotificationHeaders.sender,	
 	ITEM: $.itemLocationId.item.primaryId,
 	LOC: $.itemLocationId.location.primaryId,
 	RES: res,

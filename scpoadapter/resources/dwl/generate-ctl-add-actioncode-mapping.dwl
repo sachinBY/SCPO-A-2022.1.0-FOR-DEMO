@@ -8,8 +8,8 @@ var seqs = (vars.sequencesMap[vars.tableName] map (table , index) -> {
 }.nextvals) default []
 var columns = (keys map (key , index) -> 
 {'key': if(key == 'INTEGRATION_STAMP')
-			key ++ "\" TO_DATE(SUBSTR(:" ++ key ++ ",1,19), 'YYYY/MM/DD HH24:MI:SS')\""
-		else if(key == 'MS_BULK_REF' or key == 'MS_REF' or key == 'PROMOTION') 
+			key ++ "\" TO_DATE(SUBSTR(:" ++ key ++ ",1,19), 'YYYY/MM/DD HH24:MI:SS')\"" 
+		else if(key == 'MS_BULK_REF' or key == 'MS_REF' or key == 'PROMOTION' or key == 'MESSAGE_TYPE' or key == 'SENDER' or key == 'MESSAGE_ID') 
 			key ++ " FILLER "
 		else if(vars.metadata.columns[key]['DATA_TYPE'] == 'DATE' and !isEmpty(vars.metadata.columns[key]['DATA_TYPE'])) 
 			key ++ "\" TO_DATE(SUBSTR(:" ++ key ++ ",1,10), 'YYYY/MM/DD')\"" 

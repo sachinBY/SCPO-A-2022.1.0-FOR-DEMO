@@ -5,8 +5,11 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 (payload map (calendar, calendarIndex) -> {
 	    MS_BULK_REF: calendar.MS_BULK_REF,
 	    MS_REF: calendar.MS_REF,
+	    INTEGRATION_STAMP: calendar.INTEGRATION_STAMP,
+		MESSAGE_TYPE: calendar.MESSAGE_TYPE,
+		MESSAGE_ID: calendar.MESSAGE_ID,
+		SENDER: calendar.SENDER,
 		CAL: calendar.CAL,  
-		INTEGRATION_STAMP: calendar.INTEGRATION_STAMP,  
 	    DESCR:	calendar.DESCR,
 	    TYPE:	calendar.TYPE,
 	    MASTER:	calendar.MASTER,

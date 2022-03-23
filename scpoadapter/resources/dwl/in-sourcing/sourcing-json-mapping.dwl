@@ -9,6 +9,9 @@ var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-
 		MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 		MS_REF: vars.storeMsgReference.messageReference,
 		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((sourcingIndex))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  		MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  		SENDER: vars.bulkNotificationHeaders.sender,
 		ARRIVCAL: if(sourcing.arrivalCalendar != null) sourcing.arrivalCalendar
 				else default_value,
 		DEST: if(sourcing.sourcingId.dropOffLocation.locationId != null) sourcing.sourcingId.dropOffLocation.locationId

@@ -14,6 +14,9 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 	MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 	MS_REF: vars.storeMsgReference.messageReference,
 	INTEGRATION_STAMP: ((vars.creationDateAndTime as DateTime + ('PT' ++ $$ ++ 'S') as Period) replace 'T' with '') [0 to 17],
+	MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	SENDER: vars.bulkNotificationHeaders.sender,
 	CUST: if (not isEmpty($.'buyer.primaryId'))
 					$.'buyer.primaryId'
 				 else default_value,

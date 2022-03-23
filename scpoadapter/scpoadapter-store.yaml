@@ -20,7 +20,7 @@ scpo:
           connections: "2"
         connection:
           idle:
-            timeout: "12000000"
+            timeout: "1200000"
         response:
           buffer:
             size: "1024"

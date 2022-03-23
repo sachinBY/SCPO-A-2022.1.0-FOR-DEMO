@@ -14,7 +14,10 @@ if (payload."type"[0] == "PLAN_ARRIVAL")
 		}),
 		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((indexofplannedsupply))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
 		MS_BULK_REF: vars.storeHeaderReference.bulkReference,
-		MS_REF: vars.storeMsgReference.messageReference, 
+		MS_REF: vars.storeMsgReference.messageReference,
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  		MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  		SENDER: vars.bulkNotificationHeaders.sender, 
 		ITEM: if (plannedsupply."plannedSupplyId.item.primaryId" != null and plannedsupply."plannedSupplyId.item.primaryId" != "")  
 				plannedsupply."plannedSupplyId.item.primaryId"
 			 else default_value,

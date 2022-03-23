@@ -5,7 +5,12 @@ var suppOrderEntity = vars.entityMap.suppordersku[0].suppordersku[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---
 (payload.supplementalOrder map { 
+		  MS_BULK_REF: vars.storeHeaderReference.bulkReference,
+		  MS_REF: vars.storeMsgReference.messageReference,
 		  (INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(($$))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+		  MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+  		  MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  		  SENDER: vars.bulkNotificationHeaders.sender,
 		  ITEM: $.supplementalOrderId.itemLocationId.item.primaryId as String,
 		  LOC: $.supplementalOrderId.itemLocationId.location.primaryId as String,
 		  SUPPORDERID: $.supplementalOrderId.additionalOrderId,

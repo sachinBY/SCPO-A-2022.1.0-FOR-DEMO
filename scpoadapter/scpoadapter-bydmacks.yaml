@@ -5,8 +5,10 @@ ack:
   generator: SCPO-A  
   received:
     enabled: "true"
-  processed:
+  accepted:
     enabled: "true"
   error:
     enabled: "true"
+  sent:
+    enabled: "true"  
  

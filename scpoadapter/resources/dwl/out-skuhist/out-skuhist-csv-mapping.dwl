@@ -5,6 +5,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 ---
 payload map (value, index) -> {
 	
+	"demandHistory.documentActionCode": "CHANGE_BY_REFRESH",
 	"demandHistory.itemId": value.ITEM,
 	"demandHistory.locationId": value.LOC,
 	"demandHistory.durationInMinutes": value.DUR,

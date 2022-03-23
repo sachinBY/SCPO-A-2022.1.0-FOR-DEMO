@@ -5,6 +5,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 ---
 flatten(flatten(payload map ((item1, index1) -> {
     value:(flatten(item1 pluck($))) map (item, index) -> {
+    "itemLocationEffectiveInventoryParameters.documentActionCode": "CHANGE_BY_REFRESH",	
 	"itemLocationEffectiveInventoryParameters.itemLocationEffectiveInventoryParametersId.item.primaryId": item.ITEM,
 	"itemLocationEffectiveInventoryParameters.itemLocationEffectiveInventoryParametersId.location.primaryId": item.LOC,
 	"itemLocationEffectiveInventoryParameters.effectiveInventoryParameters.effectiveFromDateTime": item.EFF as DateTime,
